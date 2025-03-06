@@ -1,101 +1,76 @@
+"use client";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { ReactTyped } from "react-typed";
+import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+// JSON for games
+const games = [
+  { id: "game-1", name: "Game 1", image: "/Assets/game-1.png" },
+  { id: "game-2", name: "Game 2", image: "/Assets/game-1.png" },
+  { id: "game-3", name: "Game 3", image: "/Assets/game-1.png" },
+  { id: "game-4", name: "Game 4", image: "/Assets/game-1.png" },
+  { id: "game-5", name: "Game 5", image: "/Assets/game-1.png" }
+];
+
+const Home = () => {
+  const router = useRouter();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-white text-black flex flex-col">
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Platform Description Section */}
+      <div className="flex justify-center items-center flex-grow">
+        <div className="border-[4px] border-black bg-white pixel-corners p-6 w-[80%] text-center">
+          <h1 className="text-3xl pixel-font">
+            <ReactTyped
+              strings={[
+                "Win Arena is a play-to-earn one-stop with multiple games coming your way. Try unlimited times, best score counts, scale up the leaderboard, time-bound tournaments, and leaderboard-decided winners!"
+              ]}
+              typeSpeed={30}
+              showCursor={true}
+              cursorChar={"_"} // Cursor blinks at the end
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Outer Div with Border Around Marquee */}
+      <div className="w-full flex justify-center py-6">
+        <div className="relative border-[4px] border-black pixel-corners p-4 w-[90%] max-w-6xl overflow-hidden">
+          
+          {/* Infinite Scrolling Square Divs */}
+          <Marquee gradient={false} speed={30} pauseOnHover={true} className="overflow-hidden">
+            {games.map((game, index) => (
+              <div
+                key={index}
+                className="relative w-60 h-60 border-[4px] border-black mx-6 pixel-corners bg-white cursor-pointer"
+                onClick={() => router.push(`/${game.id}`)}
+                onMouseDown={(e) => e.currentTarget.style.transform = "translate(4px, 4px)"}
+                onMouseUp={(e) => e.currentTarget.style.transform = "translate(0px, 0px)"}
+              >
+                {/* Pixelated Shadow (Behind the Button) */}
+                <div className="absolute top-2 left-2 w-full h-full bg-black pixel-corners -z-10"></div>
+
+                <Image
+                  src={game.image}
+                  alt={game.name}
+                  width={240} // Adjust width
+                  height={240} // Adjust height
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
-}
+};
+
+export default Home;
