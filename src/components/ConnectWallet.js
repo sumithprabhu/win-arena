@@ -63,7 +63,7 @@ const ConnectWalletButton = () => {
 
               return (
                 <button
-                  className="relative bg-white text-black pixel-font text-sm px-6 py-2 border-[4px] border-black pixel-corners"
+                  className="relative bg-white text-black pixel-font text-sm px-6 py-2 border-[4px] border-black pixel-corners  cursor-pointer"
                   style={{ imageRendering: "pixelated" }}
                   onMouseDown={(e) => e.currentTarget.style.transform = "translate(4px, 4px)"}
                   onMouseUp={(e) => e.currentTarget.style.transform = "translate(0px, 0px)"}
