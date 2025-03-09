@@ -49,7 +49,7 @@ const queryClient = new QueryClient();
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Meta Title & Description */}
         <title>Win Arena - Play & Earn</title>
         <meta name="description" content="Win Arena is a play-to-earn gaming platform with multiple games, leaderboard competitions, and rewards!" />
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
