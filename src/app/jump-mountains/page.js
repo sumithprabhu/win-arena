@@ -231,13 +231,13 @@ const GamePage = () => {
                 <strong>How to Play</strong>
               </p>
               <p className="text-gray-700">
-                - Click and hold to **stretch** the stick; release to drop it.
+                - Click and hold to <b>stretch</b> the stick; release to drop it.
                 <br />
-                - Time your release carefully—**too short or too long means
-                falling!**
+                - Time your release carefully—<b>too short or too long means
+                falling!</b>
                 <br />
-                - Landing in the **red middle zone** gives **double points**.
-                <br />- Keep going! **Highest score before time runs out wins!**
+                - Landing in the <b>red middle zone</b> gives <b>double points</b>.
+                <br />- Keep going! <b>Highest score before time runs out wins!</b>
               </p>
             </div>
           </div>
