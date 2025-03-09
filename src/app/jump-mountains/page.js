@@ -167,7 +167,9 @@ const GamePage = () => {
                 <button
                   className="relative bg-yellow-400 text-black pixel-font text-sm px-11 py-2 border-[4px] border-black cursor-pointer"
                   onClick={
-                    !isRegistered ? handleRegister : () => router.push("/jump-mountains/play") // Open Game component
+                    !isRegistered
+                      ? handleRegister
+                      : () => router.push("/jump-mountains/play") // Open Game component
                   }
                   disabled={isRegistering}
                   onMouseDown={(e) =>
@@ -219,19 +221,23 @@ const GamePage = () => {
                 <strong>Description</strong>
               </p>
               <p className="text-gray-700">
-                Jump Mountains is a thrilling platformer where players must
-                navigate obstacles and reach the highest score before time runs
-                out. Every jump counts!
+                Jump Mountains is an intense precision-based platformer where
+                players must strategically extend a stick to bridge gaps between
+                platforms. Your goal is to master timing, reach new distances,
+                and set the highest score before the game ends!
               </p>
 
               <p className="mt-2">
                 <strong>How to Play</strong>
               </p>
               <p className="text-gray-700">
-                - Use arrow keys or swipe gestures to move.
+                - Click and hold to **stretch** the stick; release to drop it.
                 <br />
-                - Avoid obstacles and collect power-ups.
-                <br />- The highest score before time ends wins!
+                - Time your release carefully—**too short or too long means
+                falling!**
+                <br />
+                - Landing in the **red middle zone** gives **double points**.
+                <br />- Keep going! **Highest score before time runs out wins!**
               </p>
             </div>
           </div>
@@ -280,7 +286,8 @@ const GamePage = () => {
                       </thead>
                       <tbody>
                         {leaderboardData.map((player, index) => (
-                          <tr key={index}
+                          <tr
+                            key={index}
                             className="border-b border-gray-400 bg-white"
                           >
                             <td className="p-2">
