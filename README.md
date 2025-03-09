@@ -3,15 +3,15 @@
 Win Arena is a **play-to-earn** platform where players can **compete in time-bound tournaments**, track scores on the **leaderboard**, and win rewards based on their **best performance**.  
 
 ## 🔗 Live Website  
-[Play Win Arena Now](https://win-arena.vercel.app){:target="_blank" rel="noopener noreferrer"}  
+[Play Win Arena Now](https://win-arena.vercel.app)
 
 ## 📜 Deployed Smart Contracts  
 
 - **Win Arena Contract** (Manages games, leaderboards, and rewards)  
-  - **Address:** [0x7396eB6484bb85773Ec3A50AfC3dd34f98d4945A](https://scan.test.btcs.network/address/0x7396eB6484bb85773Ec3A50AfC3dd34f98d4945A#code){:target="_blank" rel="noopener noreferrer"}  
+  - **Address:** [0x7396eB6484bb85773Ec3A50AfC3dd34f98d4945A](https://scan.test.btcs.network/address/0x7396eB6484bb85773Ec3A50AfC3dd34f98d4945A#code) 
 
 - **Custom USDC Contract** (Used as the in-game currency)  
-  - **Address:** [0x86B1c62E04213c75b9CB65d1A7E5D7a1d654F760](https://scan.test.btcs.network/address/0x86B1c62E04213c75b9CB65d1A7E5D7a1d654F760#code){:target="_blank" rel="noopener noreferrer"}  
+  - **Address:** [0x86B1c62E04213c75b9CB65d1A7E5D7a1d654F760](https://scan.test.btcs.network/address/0x86B1c62E04213c75b9CB65d1A7E5D7a1d654F760#code) 
   - **Note:** Mint USDC for yourself to start playing from the **Explorer Page**!  
 
 ---
