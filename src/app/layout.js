@@ -49,6 +49,25 @@ const queryClient = new QueryClient();
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        {/* Meta Title & Description */}
+        <title>Win Arena - Play & Earn</title>
+        <meta name="description" content="Win Arena is a play-to-earn gaming platform with multiple games, leaderboard competitions, and rewards!" />
+
+        {/* Open Graph (OG) Meta Tags for Social Sharing */}
+        <meta property="og:title" content="Win Arena - Play & Earn" />
+        <meta property="og:description" content="Try unlimited times, climb the leaderboard, and earn rewards in Win Arena!" />
+        <meta property="og:url" content="https://win-arena.vercel.app/" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Win Arena - Play & Earn" />
+        <meta name="twitter:description" content="Win Arena is a play-to-earn gaming platform with exciting tournaments and prizes!" />
+       
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
