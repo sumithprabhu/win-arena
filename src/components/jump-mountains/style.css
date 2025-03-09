@@ -19,9 +19,10 @@ body {
 #score {
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 40px;
   font-size: 2em;
   font-weight: 900;
+  color: #659F1C;
 }
 
 #introduction {
@@ -29,10 +30,12 @@ body {
   height: 150px;
   position: absolute;
   font-weight: 600;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   transition: opacity 2s;
+  color: #659F1C;
+  ;
 }
 
 #restart {

@@ -6,11 +6,26 @@ import { WagmiProvider } from "wagmi";
 import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import "./globals.css";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 
+
+const coreTestnet = {
+  id: 1115,
+  name: "Core Blockchain Testnet",
+  iconUrl: "https://s2.coinmarketcap.com/static/img/coins/64x64/23254.png",
+  iconBackground: "#fff",
+  nativeCurrency: { name: "Core Testnet Token", symbol: "tCORE", decimals: 18 },
+  rpcUrls: {
+    default: { http: ["https://core-testnet.drpc.org"] },
+  },
+  blockExplorers: {
+    default: { name: "CoreScan", url: "https://scan.test.btcs.network/" },
+  },
+};
 const config = getDefaultConfig({
   appName: "Win Arena",
   projectId: "30bede5f518fc2c9a9900ada7ef88888",
-  chains: [mainnet, polygon, optimism, arbitrum, base],
+  chains: [coreTestnet],
   ssr: true,
 });
 
@@ -39,7 +54,22 @@ export default function RootLayout({ children }) {
       >
         <WagmiProvider config={config}>
           <QueryClientProvider client={queryClient}>
-            <RainbowKitProvider>{children}</RainbowKitProvider>
+            <RainbowKitProvider>
+              <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Bounce}
+              />
+              {children}
+            </RainbowKitProvider>
           </QueryClientProvider>
         </WagmiProvider>
       </body>

@@ -1,14 +1,4 @@
-/*
 
-
-
-If you want to know how this game was made, check out this video, that explains how it's made: 
-
-https://youtu.be/eue3UdFvwPo
-
-Follow me on twitter for more: https://twitter.com/HunorBorbely
-
-*/
 
 // Extend the base functionality of JavaScript
 Array.prototype.last = function () {
@@ -198,6 +188,19 @@ function animate(timestamp) {
     window.requestAnimationFrame(animate);
     return;
   }
+
+  // Inside animate() function, after updating the score
+  if (scoreElement.innerText !== score.toString()) {
+    scoreElement.innerText = score;
+  
+    // Debug: Log the score update
+    console.log("Dispatching scoreUpdated event with score:", score);
+  
+    // Dispatch an event whenever the score changes
+    window.dispatchEvent(new CustomEvent("scoreUpdated", { detail: score }));
+  }
+  
+
 
   switch (phase) {
     case "waiting":

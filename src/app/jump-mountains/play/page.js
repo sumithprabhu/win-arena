@@ -1,5 +1,5 @@
 "use client";
-import Game from "../../components/jump-mountains/Game";
+import Game from "../../../components/jump-mountains/Game";
 
 function App() {
   return (
