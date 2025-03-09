@@ -406,4 +406,4 @@ export const stableContractABI= [
 	}
 ]
 
-export const stableContractAddress = "0x153cF548aFC5CF996861A38ac62ca066E8349FD6"
+export const stableContractAddress = "0x1683515e34806a7B24c164B71FF7956F647127E4"
