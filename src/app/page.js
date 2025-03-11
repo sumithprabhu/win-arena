@@ -469,10 +469,10 @@ const Home = () => {
 
       {/* Platform Description Section */}
       <div className="flex justify-center items-center flex-grow">
-        <div className="border-[4px] border-black bg-white pixel-corners p-6 w-[80%] text-left">
-          <h1 className="text-3xl pixel-font">
+        <div className="border-[4px] border-black  pixel-corners p-6 w-[80%] text-left ">
+          <h1 className="text-3xl pixel-font  ">
             <ReactTyped
-              className="block"
+              className="block "
               strings={[
                 "Win Arena is a play-to-earn one-stop with multiple games coming your way. Try unlimited times, best score counts, scale up the leaderboard, time-bound tournaments, and leaderboard-decided winners!",
               ]}
