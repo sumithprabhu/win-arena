@@ -453,7 +453,18 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col">
+    <div className="relative min-h-screen flex flex-col text-black">
+    {/* Background Video */}
+    <video
+      className="absolute top-0 left-0 w-full h-full object-cover z-[-10]" // Lower z-index to push it behind everything
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src="/Assets/background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
       <Navbar />
 
       {/* Platform Description Section */}

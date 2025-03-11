@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter ,usePathname} from "next/navigation";
 import { useReadContract, useAccount } from "wagmi"; // Import wagmi hooks
 import ConnectWalletButton from "./ConnectWallet";
 import DepositWithdrawModal from "./DepositWithdrawModal"; 
@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const { address } = useAccount(); // Get user address
-
+const pathname = usePathname();
   // Fetch user's WIN balance using the contract's `users` mapping
   const { data: winBalance, isLoading, error } = useReadContract({
     address: contractAddress,
@@ -20,10 +20,10 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="w-full bg-white border-b-[5px] border-black py-4 px-6 flex justify-between items-center text-black relative">
-      {/* Left Side: Logo */}
+<nav className={`w-full py-4 px-6 flex justify-between items-center text-black relative border-b-[5px] border-black ${pathname === "/" ? "bg-transparent" : "bg-white"}`}>
+{/* Left Side: Logo */}
       <div 
-        className="font-bold pixel-font text-3xl tracking-wide cursor-pointer"
+        className={`font-bold pixel-font text-3xl tracking-wide cursor-pointer ${pathname === "/" ? "text-white" : "text-black"}`}
         onClick={() => router.push("/")}
       >
         WIN ARENA
